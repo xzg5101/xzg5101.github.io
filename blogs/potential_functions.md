@@ -14,13 +14,15 @@
 
 The motion of an object is defined by its velocity vector, which has a direction and a speed. In the nature, a creature may rest, stroll, chase or decamp. This section will focus on chasing and decamping, which are essentially the same mechenism in terms of implementation, with only opposite dircections. Stroll will be discussed in following sections.
 
-To make a object chase a target, the most intuitive method would be finding the vector from this object to the target, and using this vector to be the velocity——which works, but have some issues. First, the object will become slower as it get closer to the target. This may be desired in some specific situations, but is definetly not suitable for all situations. This issue can be addressed by normalize the vector and mutiply with a speed value. As you would see, no matter what method we use to compute the velocity vector, this operation will be preserved. Secondly, this method cannot really deal with situations where multiple target present in the space. The natural solution is to simply add up all the vectors from the object to each target. However this is not really a generic solution. For example, if there are two targets, then the object will move to the middle of the two target and stop there no matter where it begins\*. Once again, this is not suitable for most situations.<br />
-
+To make a object chase a target, the most intuitive method would be finding the vector from this object to the target, and using this vector to be the velocity——which works, but have some issues. <br />
 <img
     src="../media/potential_vector/img01_object_to_target.png"
     alt="Vector from the object to the target"
     height="150"
   />
+
+First, the object will become slower as it get closer to the target. This may be desired in some specific situations, but is definetly not suitable for all situations. This issue can be addressed by normalize the vector and mutiply with a speed value. As you would see, no matter what method we use to compute the velocity vector, this operation will be preserved. Secondly, this method cannot really deal with situations where multiple target present in the space. The natural solution is to simply add up all the vectors from the object to each target. However this is not really a generic solution. For example, if there are two targets, then the object will move to the middle of the two target and stop there no matter where it begins. Once again, this is not suitable for most situations.<br />
+
 <img
     src="../media/potential_vector/img02_two_targets.png"
     alt="Cannot handle two targets"
