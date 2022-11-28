@@ -1,7 +1,5 @@
-# Guo Xiaoyang
+# Guo Xiaoyang's Blogs
 
-## This will be a site for my blogs
-
-# My Blogs
+## My Blogs
 
 - [Motion with Potential Functions](./blogs/potential_functions.md)
