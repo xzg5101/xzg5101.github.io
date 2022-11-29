@@ -1,5 +1,4 @@
 # Guo Xiaoyang's Blogs
 
-## My Blogs
-
-- [Techniqual blogs](./techniqual_blogs.md)
+- [Techniqual Blogs](./categories/techniqual_blogs.md)
+- [Book Reviews](./categories/book_reviews.md)

@@ -4,9 +4,14 @@
 
 ## Table of content
 
+- Preparation
 - Math Walkthrough
 - Preditor-prey Model
-- Making creature more vivid
+- Making Creatures More Vivid
+
+## Before You Start
+
+Before reading this blog, you need to make sure you understand how to find the gradient of a function. Also make sure you are comfortable with 3D space.
 
 ## Math and Theory Behind Potential Functions
 
@@ -33,12 +38,27 @@ So the task in front of us is to avoid equilibriums as much as possible. One met
 
 ### Potential Functions and Gradient Descent
 
-With the conceptual understanding, let's take a look at the math. As we mentioned in last part, by putting the distance from the object to the targets in the denominator, we can make the target that is closest to the object be more attractive. However, we want a more generic methodology such that we can deal with all sort of situations. We call all functions that define the objects' reaction on target potential functions. Potential functions can decide a lot of things. They could be attracted or repelled by the target, and if they are attracted, they may prefer some of the targets over others based on some properties, etc.
+With the conceptual understanding, let's take a look at the math. As we mentioned in last part, by putting the distance from the object to the targets in the denominator, we can make the target that is closest to the object be more attractive. However, we want a more generic methodology such that we can deal with all sort of situations. We call all functions that define the objects' reaction on target potential functions. Potential functions can decide a lot of things. They could be attracted or repelled by the target, and if they are attracted, they may prefer some of the targets over others based on some properties, etc. Both functions we mentioned in last part are potential functions, and they perform differently. In this artical, the only property we care about is the distance from the object to the targets, thus we can define potential functions in a specific way: **A potential fucntion is a function that inputs the positions of the object and the target, and returns a value that reflect the desired behavior of the object.** Notice this is not a formal defination of potential function. The name is called "potential functions" because these functions do look like and perform like real world potential functions in terms of attraction and repulsion, such as gravity or magnetic fields. Our job is to figure out the desired motion pattern of the object when target presents, and design potential functions that meet the requirement. When multiple targets present, the overall potential should be obtained by simply add all the potential vectors from each target.
 
-Gradient descent is a very commonly used method in machine learning to find the local minimum of a function.
+After designing potential functions, we need to figure out how to use them. The goal is to push the object to approach some equalibrium. Gradient descent is a very commonly used method in machine learning to find the local minimum of a function; our initial purpose is to minimize the distance between the object and the target, so naturally we addapt this concept. The gradient of a function gives the fastest direction to "move" along the fuction that will reach the minimum of the function.
+
+Let's look at an example. Assume that we are in 3D space, and we decide to use the second potential function mentioned in last part. The object is currently locating at $P_o = (x_o, y_o, z_o)$, and a target presents at $P_t = (x_t, y_t, z_t)$. The vector from the object to the target would be $P_t-P_o$, and the distance between them would be $||P_t-P_o||^2$. The potential function can be designed as:
+$$f(P_o, P_t) = \frac{1}{||P_t-P_o||^2+\epsilon}$$
+Where $\epsilon$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
+
+$$
+\nabla f =
+\begin{bmatrix}
+\frac{2(x_t-x_o)}{(||P_t-P_o||^2+\epsilon)^2} \\
+\frac{2(y_t-y_o)}{(||P_t-P_o||^2+\epsilon)^2} \\
+\frac{2(z_t-z_o)}{(||P_t-P_o||^2+\epsilon)^2}
+\end{bmatrix}
+$$
+
+This gradient gives us the vector that defines the motion of the object. Simply change the sign of this vector will make the object attracted or repulsed by the target.
 
 ## Preditor-prey Model
 
-One common pattern of motions is a preditor-prey model. The basic ideal is from the nature, where in an environment, there are two type of creatures, preditors and preys. A preditor will try to catch the preys, and the preys try not to be caught by the preditors. By simply implementing the methods mentioned above to preditors, and use the inverse on preys, the output works fine in a infinite space.
+We've finished the math induction and ready to look at some implementation wise concepts. One common pattern of motions is a preditor-prey model. The basic ideal is from the nature. In an environment, there are two type of creatures, preditors and preys. A preditor will try to catch the preys, and the preys try not to be caught by the preditors. By simply implementing the methods mentioned above to preditors, and use the inverse on preys, the output works fine in a infinite space.
 
 (Not Finished)
