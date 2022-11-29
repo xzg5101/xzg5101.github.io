@@ -29,11 +29,13 @@ First, the object will become slower as it get closer to the target. This may be
     height="150"
   />
 
-So the task in front of us is to avoid equilibriums as much as possible. One method is to make the closer targets more "attractive" to the target. If this is true, then the object will go to not the middle point between the targets, but the closer target instead, which is desirable for most situations. How do we do this? Remember we metioned that without normalization, the velocity vector will become smaller and smaller as it approach the target, which means the inverse become larger and larger. Furthermore, by increase the power of the dinominator, the attraction of closer targets will be higher and higher compare to the targets that are further away from the object. Keep this in mind when you try to work out the math in next part of this section.
+So the task in front of us is to avoid equilibriums as much as possible. One method is to make the closer targets more "attractive" to the target. If this is true, then the object will go to not the middle point between the targets, but the closer target instead, which is desirable for many situations. How do we do this? Remember we metioned that without normalization, the velocity vector will become smaller and smaller as it approach the target, which means the inverse become larger and larger. Furthermore, by increase the power of the dinominator, the attraction of closer targets will be higher and higher compare to the targets that are further away from the object. Keep this in mind when you try to work out the math in next part of this section.
 
-### Gradient Descent
+### Potential Functions and Gradient Descent
 
-With the conceptual understanding, let's take a look at the math.
+With the conceptual understanding, let's take a look at the math. As we mentioned in last part, by putting the distance from the object to the targets in the denominator, we can make the target that is closest to the object be more attractive. However, we want a more generic methodology such that we can deal with all sort of situations. We call all functions that define the objects' reaction on target potential functions. Potential functions can decide a lot of things. They could be attracted or repelled by the target, and if they are attracted, they may prefer some of the targets over others based on some properties, etc.
+
+Gradient descent is a very commonly used method in machine learning to find the local minimum of a function.
 
 ## Preditor-prey Model
 
