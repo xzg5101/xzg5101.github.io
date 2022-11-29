@@ -55,10 +55,10 @@ $$
 \end{bmatrix}
 $$
 
-This gradient gives us the vector that defines the motion of the object. Simply change the sign of this vector will make the object attracted or repulsed by the target.
+This gradient gives us the vector that defines the motion of the object. In another word, this gradient vector is the "potential vector" give by the target. Simply change the sign of this vector will make the object attracted or repulsed by the target. When multiple targets present simultaneously, simply summing up all the potentials from all targets gives the overall potential.
 
 ## Preditor-prey Model
 
-We've finished the math induction and ready to look at some implementation wise concepts. One common pattern of motions is a preditor-prey model. The basic ideal is from the nature. In an environment, there are two type of creatures, preditors and preys. A preditor will try to catch the preys, and the preys try not to be caught by the preditors. By simply implementing the methods mentioned above to preditors, and use the inverse on preys, the output works fine in a infinite space.
+We've finished the math induction and ready to look at some implementation wise concepts. One common pattern of motions is a preditor-prey model. The basic ideal is from the nature. In an environment, there are two type of creatures, preditors and preys. A preditor will try to catch the preys, and the preys try not to be caught by the preditors. By simply implementing the methods mentioned above to preditors, and use the inverse on preys, the output works fine in a infinite space. In every frame, the preditor will compute all the potential vectors from all preys, and sum them up to get the overall motion vector; similarly, the prey will compute all the potential vectors from all preditors, and repeat the same process.
 
 (Not Finished)
