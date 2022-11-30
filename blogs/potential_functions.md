@@ -46,18 +46,18 @@ With the conceptual understanding, let's take a look at the math. As we mentione
 
 After designing potential functions, we need to figure out how to use them. The goal is to push the object to approach some equalibrium. Gradient descent is a very commonly used method in machine learning to find the local minimum of a function; our initial purpose is to minimize the distance between the object and the target, so naturally we addapt this concept. The gradient of a function gives the fastest direction to "move" along the fuction that will reach the minimum of the function.
 
-Let's look at an example. Assume that we are in 3D space, and we decide to use the second potential function mentioned in last part. The object is currently locating at $$P_o = (x_o, y_o, z_o)$$, and a target presents at $$P_t = (x_t, y_t, z_t)$$. The vector from the object to the target would be $$P_t$$-$$P_o$$, and the distance between them would be $$||P_t$$-$$P_o||^2$$. The potential function can be designed as:
+Let's look at an example. Assume that we are in 3D space, and we decide to use the second potential function mentioned in last part. The object is currently locating at $P_o = (x_o, y_o, z_o)$, and a target presents at $P_t = (x_t, y_t, z_t)$. The vector from the object to the target would be $P_t-P_o$, and the distance between them would be $\lVert P_t-P_o\rVert^2$. The potential function can be designed as:
 
-$$f(P_o, P_t) = \frac{1}{||P_t-P_o||^2+\epsilon}$$
+$$f(P_o, P_t) = \frac{1}{\lVert P_t-P_o\rVert^2+\epsilon}$$
 
-Where $$\epsilon$$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
+Where $\epsilon$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
 
 $$
 \nabla f =
 \begin{bmatrix}
-\frac{2(x_t-x_o)}{(||P_t-P_o||^2+\epsilon)^2} \\
-\frac{2(y_t-y_o)}{(||P_t-P_o||^2+\epsilon)^2} \\
-\frac{2(z_t-z_o)}{(||P_t-P_o||^2+\epsilon)^2}
+\frac{2(x_t-x_o)}{(\lVert P_t-P_o\rVert^2+\epsilon)^2} \\
+\frac{2(y_t-y_o)}{(\lVert P_t-P_o\rVert^2+\epsilon)^2} \\
+\frac{2(z_t-z_o)}{(\lVert P_t-P_o\rVert^2+\epsilon)^2}
 \end{bmatrix}
 $$
 
@@ -71,6 +71,5 @@ We've finished the math induction and ready to look at some implementation wise 
 
 ### Basics
 
-To make the
-
+To mak e
 (Not Finished)
