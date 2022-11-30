@@ -109,7 +109,7 @@ Placeholder.
 
 The a short demo of author's implementation can be viewed at：
 
-https://www.bilibili.com/video/BV1xg411v71t/
+[Link to my demo](https://www.bilibili.com/video/BV1xg411v71t/）
 
 This is not the final outcome, but very close to it.
 
