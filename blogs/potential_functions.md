@@ -107,7 +107,7 @@ Placeholder.
 
 ## Demo
 
-The a short demo of author's implementation can be viewed at：
+A short demo of author's implementation can be viewed at：
 
 [Link to My Demo](https://www.bilibili.com/video/BV1xg411v71t/)
 
