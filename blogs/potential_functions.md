@@ -4,7 +4,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
-### Guo Xiaoyang 2022, Nov.18
+### Guo Xiaoyang 2022, Nov.29
 
 ## Table of content
 
@@ -46,11 +46,11 @@ With the conceptual understanding, let's take a look at the math. As we mentione
 
 After designing potential functions, we need to figure out how to use them. The goal is to push the object to approach some equalibrium. Gradient descent is a very commonly used method in machine learning to find the local minimum of a function; our initial purpose is to minimize the distance between the object and the target, so naturally we addapt this concept. The gradient of a function gives the fastest direction to "move" along the fuction that will reach the minimum of the function.
 
-Let's look at an example. Assume that we are in 3D space, and we decide to use the second potential function mentioned in last part. The object is currently locating at $P_o = (x_o, y_o, z_o)$, and a target presents at $P_t = (x_t, y_t, z_t)$. The vector from the object to the target would be $P_t-P_o$, and the distance between them would be $||P_t-P_o||^2$. The potential function can be designed as:
+Let's look at an example. Assume that we are in 3D space, and we decide to use the second potential function mentioned in last part. The object is currently locating at $$P_o = (x_o, y_o, z_o)$$, and a target presents at $$P_t = (x_t, y_t, z_t)$$. The vector from the object to the target would be $$P_t-P_o$$, and the distance between them would be $$||P_t-P_o||^2$$. The potential function can be designed as:
 
 $$f(P_o, P_t) = \frac{1}{||P_t-P_o||^2+\epsilon}$$
 
-Where $\epsilon$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
+Where $$\epsilon$$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
 
 $$
 \nabla f =
@@ -66,5 +66,9 @@ This gradient gives us the vector that defines the motion of the object. In anot
 ## Preditor-prey Model
 
 We've finished the math induction and ready to look at some implementation wise concepts. One common pattern of motions is a preditor-prey model. The basic ideal is from the nature. In an environment, there are two type of creatures, preditors and preys. A preditor will try to catch the preys, and the preys try not to be caught by the preditors. By simply implementing the methods mentioned above to preditors, and use the inverse on preys, the output works fine in a infinite space. In every frame, the preditor will compute all the potential vectors from all preys, and sum them up to get the overall motion vector; similarly, the prey will compute all the potential vectors from all preditors, and repeat the same process. A creature can be preditor and prey at the same time.
+
+## Making Creatures More Vivid
+
+### Basics
 
 (Not Finished)
