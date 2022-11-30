@@ -61,7 +61,7 @@ $$
 \end{bmatrix}
 $$
 
-This gradient gives us the vector that defines the motion of the object. In another word, this gradient vector is the "potential vector" give by the target. Simply change the sign of this vector will make the object attracted or repulsed by the target. When multiple targets present simultaneously, simply summing up all the potentials from all targets gives the overall potential.
+This gradient gives us the vector that defines the motion of the object. In another word, this gradient vector is the "potential vector" give by the target. Simply change the sign of this vector will make the object attracted or repulsed by the target. When multiple targets present simultaneously, simply summing up all the potentials from all targets gives the overall potential. Also, do not forget to normalize it before you apply it to your creature.
 
 ## Preditor-prey Model
 
