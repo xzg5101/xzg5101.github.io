@@ -15,7 +15,7 @@
 
 ## Before You Start
 
-Before reading this blog, make sure you understand how to find the gradient of a function. Also make sure you are comfortable working with 3D space.
+Before reading this blog, make sure you understand how to find the gradient of a function. Also make sure you are comfortable working with 3D space. If you wish to fully understand the forth section, it would be a good idea to review quaternions or Euler rotations before you reach there. Both are fine, but this article will focus on quaternions.
 
 ## Math and Theory Behind Potential Functions
 
@@ -50,7 +50,7 @@ Let's look at an example. Assume that we are in 3D space, and we decide to use t
 
 $$f(P_o, P_t) = \frac{1}{\lVert P_t-P_o\rVert^2+\epsilon}$$
 
-Where $$\epsilon$$ is a small constant added to avoid divsion by zero when the object and the target are at the same position. The gradient of the potential function would therefore be:
+Where $$\epsilon$$ is a small constant added to avoid divide-by-zero error when the object and the target are at the same position. The gradient of the potential function would therefore be:
 
 $$
 \nabla f =
@@ -69,8 +69,46 @@ We've finished the math induction and ready to look at some implementation wise 
 
 ## Making Creatures More Vivid
 
-### Basics
+Now we have finished the very naive move——the preditor will chase the prey and the prey will try to run away. But if we are to create an aquarium or vavarium, this is far away from success. There are some basic operations you can do to greatly increase the liveliness (or in the contrast, if you do not implement them, the creatures would be very much lifeless).
 
-Now we have finished the very naive move
+### "Eyes on The Road"
+
+The most important feature in this section would be make you creature heading the correct direction while it is moving. A crab may look on the side, a Nautilidae will face backward, and most creatures will head toward and moving toward the same direction. This can be done with a quaternion.
+
+### Collision Detection
+
+Placeholder.
+
+### Creature's Periodic Animation
+
+Placeholder.
+
+### Chase/Escape Strategies
+
+Placeholder.
+
+#### Target Preference
+
+Placeholder.
+
+#### Change in Speed
+
+Placeholder.
+
+#### Corner Avoidence
+
+Placeholder.
+
+### Group Behavior
+
+Placeholder.
+
+## Demo
+
+The a short demo of author's implementation can be viewed at：
+
+https://www.bilibili.com/video/BV1xg411v71t/
+
+This is not the final outcome, but very close to it.
 
 (Not Finished)
